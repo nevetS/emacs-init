@@ -7,3 +7,6 @@
 [submodule "plugins/fci"]
 	path = plugins/fci
 	url = git@github.com:alpaker/Fill-Column-Indicator.git
+[submodule "plugins/window-number"]
+	path = plugins/window-number
+	url = git@github.com:nikolas/window-number.git
