@@ -1,0 +1,16 @@
+Unbound.el
+==========
+
+This file was pulled from the emacswiki repository, which is a bit to much to
+clone as a submodule.
+
+The latest version of this file can be found at the following locations:
+
+Raw File:
+https://raw.githubusercontent.com/emacsmirror/emacswiki.org/master/unbound.el
+
+Github wrapped version:
+https://github.com/emacsmirror/emacswiki.org/blob/master/unbound.el
+
+The file in this folder is commit 7db0b1cbdffc0c94c281a9b55b17b7d5e605e7cf from
+May 6, 2016

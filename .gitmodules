@@ -1,3 +1,9 @@
 [submodule "plugins/yasnippet"]
 	path = plugins/yasnippet
 	url = git@github.com:joaotavora/yasnippet.git
+[submodule "plugins/autopair"]
+	path = plugins/autopair
+	url = git@github.com:joaotavora/autopair.git
+[submodule "plugins/fci"]
+	path = plugins/fci
+	url = git@github.com:alpaker/Fill-Column-Indicator.git
