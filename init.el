@@ -8,8 +8,14 @@
 
 ;;; Code:
 
-;; default xemacs configuration directory
-(defconst sk:emacs-config-dir "~/.emacs.d/configs/" "")
+
+(defconst sk:emacs-config-dir (expand-file-name "configs/"
+	                      (file-name-directory load-file-name))
+                              "Path to configuration and init files")
+
+(defconst sk:emacs-plugin-path (expand-file-name "plugins/"
+	                       (file-name-directory load-file-name))
+                               "Path to plugins")
 
 ;; utility function to auto-load my package configurations
 (defun sk:load-config-file (filelist)
@@ -20,25 +26,25 @@
        ))
 
 (sk:load-config-file '(;;base
-		       "yasnippet"   ;provides templated completions
-		       "color-theme" ;change default color-scheme
+;		       "yasnippet"   ;provides templated completions
+;; superseded in emacs24      "color-theme" ;change default color-scheme
 		       "unbound"     ;find unbound keys
 		       "autopair"    ;close parens/brackets/etc
 		       "fci"         ;fill column indicator
-		       "linum"       ;line number mode
-		       "window-number" ; window numbers
-		       "packages"    ;set up package archives
+;; superseded in emacs22		       "linum"       ;line number mode
+;		       "window-number" ; window numbers
+;		       "packages"    ;set up package archives
 		       ;;
-		       "markdown"    ;markdown mode
-		       "graphviz"    ;graphviz mode
-		       "docker"      ;docker mode
+;		       "markdown"    ;markdown mode
+;		       "graphviz"    ;graphviz mode
+;		       "dockerfile-mode"      ;dockerfile-mode
 		       
 		       ;;python
-		       "virtualenvwrapper"
-		       "Pymacs"
-		       "python-mode"
-		       "rope"
-		       "jedi"
+;		       "virtualenvwrapper"
+;		       "Pymacs"
+;		       "python-mode"
+;		       "rope"
+;		       "jedi"
 		       ))
 (provide 'init)
 ;;; init.el ends here

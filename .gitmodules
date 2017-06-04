@@ -10,3 +10,6 @@
 [submodule "plugins/window-number"]
 	path = plugins/window-number
 	url = git@github.com:nikolas/window-number.git
+[submodule "plugins/dockerfile-mode"]
+	path = plugins/dockerfile-mode
+	url = git@github.com:spotify/dockerfile-mode
