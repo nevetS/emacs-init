@@ -48,7 +48,7 @@
 ;; * cleanup the mess of graphviz-dot-compilation-parse-errors
 ;; * electric indentation is fundamentally broken, because 
 ;;   {...} are also used for record nodes. You could argue, I suppose, that 
-;;   many diagrams don't need those, but it would be worth having a note (and 
+;;   many diagrams dont need those, but it would be worth having a note (and 
 ;;   it makes sense that the default is now for electric indentation to be 
 ;;   off).
 
@@ -103,7 +103,7 @@
 ;;             added some documentation to dot-colors.
 ;;             provided a much better way to handle my max-specpdl-size
 ;;             problem.
-;;             added an extra autoload cookie (hope this helps, as I don't
+;;             added an extra autoload cookie (hope this helps, as I dont
 ;;             yet use autoload myself)
 ;; Version 0.1.1 bug fixes
 ;; 06/11/2002: added an missing attribute, for font-locking to work.
@@ -122,7 +122,7 @@
 ;;             implementing font-lock.
 
 ;;; Code:
-
+(provide 'graphviz-dot-mode)
 (defconst graphviz-dot-mode-version "0.3.3"
   "Version of `graphviz-dot-mode.el'.")
 
@@ -376,16 +376,16 @@ The list of constant is available at http://www.research.att.com/~erg/graphviz\
 
 
 (defvar graphviz-dot-color-keywords
-  (mapcar 'symbol-name graphviz-dot-colors-list))
+  (mapcar #'symbol-name graphviz-dot-colors-list))
 
 (defvar graphviz-attr-keywords
-  (mapcar '(lambda (elm) (cons elm 0)) graphviz-dot-attr-keywords))
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-attr-keywords))
 
 (defvar graphviz-value-keywords
-  (mapcar '(lambda (elm) (cons elm 0)) graphviz-dot-value-keywords))
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-value-keywords))
 
 (defvar graphviz-color-keywords
-  (mapcar '(lambda (elm) (cons elm 0)) graphviz-dot-color-keywords))
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-color-keywords))
 
 ;;; Key map
 (defvar graphviz-dot-mode-map ()
@@ -556,7 +556,7 @@ package. Note that the latest X/Emacs releases contain this package.")
 ;; note on graphviz-dot-compilation-parse-errors:
 ;;  It would nicer if we could just use compilation-error-regexp-alist
 ;;  to do that, 3 options:
-;;   - still write dot-compilation-parse-errors, don't build
+;;   - still write dot-compilation-parse-errors, dont build
 ;;     a return list, but modify the *compilation* buffer
 ;;     in a way compilation-error-regexp-alist recognizes the
 ;;     format.
@@ -866,12 +866,12 @@ buffer is saved before the command is executed."
                                      (graphviz-dot-get-keywords))))
          (match (if graphviz-dot-toggle-completions
                     "" (try-completion
-                        graphviz-dot-str (mapcar '(lambda (elm)
+                        graphviz-dot-str (mapcar #'(lambda (elm)
                                                     (cons elm 0)) allcomp)))))
     ;; Delete old string
     (delete-region b e)
     
-    ;; Toggle-completions inserts whole labels
+    Toggle-completions inserts whole labels
     (if graphviz-dot-toggle-completions
         (progn
           ;; Update entry number in list
@@ -910,10 +910,11 @@ buffer is saved before the command is executed."
              (if graphviz-dot-delete-completions
                  (delete-window 
                   (get-buffer-window (get-buffer "*Completions*"))))
-             )))))
+             )))
+    ))
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))
+(add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode)) 
 
 ;;; graphviz-dot-mode.el ends here
 

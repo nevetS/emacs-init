@@ -26,21 +26,23 @@
        ))
 
 (sk:load-config-file '(;;base
-;		       "yasnippet"   ;provides templated completions
+		       "yasnippet"   ;provides templated completions
 ;; superseded in emacs24      "color-theme" ;change default color-scheme
 		       "unbound"     ;find unbound keys
 		       "autopair"    ;close parens/brackets/etc
 		       "fci"         ;fill column indicator
 ;; superseded in emacs22		       "linum"       ;line number mode
-;		       "window-number" ; window numbers
+		       "window-number" ; window numbers
 ;		       "packages"    ;set up package archives
 		       ;;
-;		       "markdown"    ;markdown mode
-;		       "graphviz"    ;graphviz mode
-;		       "dockerfile-mode"      ;dockerfile-mode
+		       "markdown-mode"    ;markdown mode
+		       "graphviz"    ;graphviz mode
+		       "dockerfile-mode"      ;dockerfile-mode
 		       
 		       ;;python
-;		       "virtualenvwrapper"
+		       "s" ; virtualenvwrapper dependency
+		       "dash" ; virtualenvwrapper dependency
+		       "virtualenvwrapper"
 ;		       "Pymacs"
 ;		       "python-mode"
 ;		       "rope"

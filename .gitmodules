@@ -13,3 +13,24 @@
 [submodule "plugins/dockerfile-mode"]
 	path = plugins/dockerfile-mode
 	url = git@github.com:spotify/dockerfile-mode
+[submodule "plugins/markdown-mode"]
+	path = plugins/markdown-mode
+	url = git@github.com:defunkt/markdown-mode
+[submodule "plugins/s.el"]
+	path = plugins/s.el
+	url = git@github.com:magnars/s.el.git
+[submodule "plugins/dash.el"]
+	path = plugins/dash.el
+	url = git@github.com:magnars/dash.el.git
+[submodule "plugins/dash"]
+	path = plugins/dash
+	url = git@github.com:magnars/dash.el.git
+[submodule "plugins/s"]
+	path = plugins/s
+	url = git@github.com:magnars/s.el.git
+[submodule "plugins/virtualenvwrapper"]
+	path = plugins/virtualenvwrapper
+	url = git@github.com:porterjamesj/virtualenvwrapper.el.git
+[submodule "install/pymacs-rope/Pymacs"]
+	path = install/pymacs-rope/Pymacs
+	url = git@github.com:dgentry/Pymacs.git

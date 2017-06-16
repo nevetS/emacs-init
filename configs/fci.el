@@ -4,15 +4,7 @@
 
 ;;; Commentary:
 
-;; Compatibility: Emacs 24.x or newer.  May work in older versions, may not
 
-
-; Important keys and commands:
-; - describe-fill-column-indicator-keys
-;   - key complexity should be at least 5
-
-
-;; In Emacs 24.4 or newer, it's recommended to use electric-pair-mode instead
 
 ;;; Code:
 (eval-when-compile (defvar sk:emacs-plugin-path)) ; defined in ~/.init.el
@@ -39,4 +31,4 @@
 (setq fci-rule-color "#7f9f7f")
 (add-hook 'after-change-major-mode-hook 'fci-mode)
 
-;;; fill-column-indicator.el ends here
+;;; fci.el ends here
