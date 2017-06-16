@@ -18,6 +18,10 @@ To install Pymacs and rope, run the following:
 	
 ```
 
-This repository does have an updated readme with installation instructions and
+Once that is done, you'll want to go into the plugins directory and edit the
+Makefile to include the appropriate python binary (e.g. python2.7) and run `make`
+in order to create pymacs.el
+
+This forked repository does have an updated readme with installation instructions and
 links to the most recent Pymacs documentation on wwwarchive.
 	

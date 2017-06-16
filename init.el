@@ -43,9 +43,13 @@
 		       "s" ; virtualenvwrapper dependency
 		       "dash" ; virtualenvwrapper dependency
 		       "virtualenvwrapper"
-;		       "Pymacs"
-;		       "python-mode"
-;		       "rope"
+		       "rope" ; Pymacs and rope-mode, requires installation
+		              ;  see emacs-init/install/pymacs-rope
+		       "python-mode.el"
+		       "expand-region"
+		       "ido"
+		       "org"
+		       "js2-mode"
 ;		       "jedi"
 		       ))
 (provide 'init)
