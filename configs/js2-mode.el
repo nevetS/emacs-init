@@ -8,6 +8,9 @@
 ;;; Code:
 (eval-when-compile (defvar sk:emacs-plugin-path)) ; defined in ~/.init.el
 (eval-when-compile (defvar sk:current-plugin)) ; defined in ~/.init.el
+(eval-when-compile (defvar js2-mirror-mode)) ; defined in js2-mode
+(eval-when-compile (defvar js2-include-node-externs)) ; defined in ~/.init.el
+(eval-when-compile (defvar js2-bounce-indent-p)) ; defined in ~/.init.el
 
 (setq sk:current-plugin 'js2-mode)
 
