@@ -16,8 +16,6 @@
 
 ;;; any packages that are being installed or tried out belong here
 
-(setq sk:package-list '(jedi
-			))
 
 (require 'package)
 ;; elpa archive is installed by default, add melpa, melpa-stable, and gnu
