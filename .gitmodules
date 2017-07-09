@@ -43,3 +43,6 @@
 [submodule "plugins/js2-mode"]
 	path = plugins/js2-mode
 	url = git@github.com:mooz/js2-mode.git
+[submodule "plugins/python-mode.el"]
+	path = plugins/python-mode.el
+	url = https://gitlab.com/python-mode-devs/python-mode.git
