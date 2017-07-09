@@ -3,9 +3,26 @@
 ;;; Commentary:
 ;;     Steve's Emacs configuration, modularized to take the bite out of an
 ;;     entirely too large init.el
-
-
-
+;;
+;;     Packages are installed by configs/package.el, which is the first config
+;;     file to be loaded. If additional packages are desired, add the package
+;;     name to the variable sk:package-list at the top of that configuration
+;;     file. 
+;;
+;;     There are many packages that are manually installed.  I tend to prefer
+;;     manual installation over package installation because that allows for the
+;;     privelege of installing updates prior to release of a package to one of
+;;     the package repositories.  There are times when the package repositories
+;;     are sorely out of date.
+;;
+;;     Each package installation consists of a config file in
+;;     /configs/package-name.el and a similarly named directory in
+;;     plugins/package-name that contains the plugin content.  Where possible
+;;     the plugins/package-name directory is a git submodule pointed directly
+;;     at the source repository of the official package.  Updating a package to
+;;     the newest release should be a matter of 'git checkout tags/<release_name>'
+;;     To view the installed release for a given submodule, the command
+;;     'git branch' should respond with " *(Head detached at <release name>)"
 ;;; Code:
 
 
@@ -17,6 +34,7 @@
 	                       (file-name-directory load-file-name))
                                "Path to plugins")
 
+
 ;; utility function to auto-load my package configurations
 (defun sk:load-config-file (filelist)
     (dolist (file filelist)
@@ -24,33 +42,58 @@
              (concat sk:emacs-config-dir file)))
        (message "Loaded config file:%s" file)
        ))
+;; these packages are installed by the package config file
+(setq sk:package-list '(
+			expand-region
+			flycheck ; syntax checking for python
+			jedi  ; jedi-mode for python development
+			magit ; git integration
+			web-beautify ; in order to use this, install
+					; js-beautify with
+					; npm -g install js-beautify
+			yaml-mode ; yaml-mode
 
-(sk:load-config-file '(;;base
-		       "yasnippet"   ;provides templated completions
-;; superseded in emacs24      "color-theme" ;change default color-scheme
-		       "unbound"     ;find unbound keys
+;;removed for now	company ; auto-complistions with company mode
+			))
+
+
+;; packages to be loaded configured are in alphabetical order except in the
+;; following situations:
+;; * package always comes first
+;; * personal always comes last
+;; * packages with dependencies are grouped together after the alphabetical list
+(sk:load-config-file '(
+		       "package"     ; installs any missing packages,
+				     ; initializes packages
+;; main packages
 		       "autopair"    ;close parens/brackets/etc
-		       "fci"         ;fill column indicator
-;; superseded in emacs22		       "linum"       ;line number mode
-		       "window-number" ; window numbers
-;		       "packages"    ;set up package archives
-		       ;;
-		       "markdown-mode"    ;markdown mode
-		       "graphviz"    ;graphviz mode
 		       "dockerfile-mode"      ;dockerfile-mode
+		       "expand-region"
+		       "fci"         ;fill column indicator
+		       "graphviz"    ;graphviz mode
+		       "ido"         ;ido directory and buffer completion
+		       "js2-mode"    ;js2-mode for javascript development
+		       "markdown-mode"    ;markdown mode
+		       "org"         ;org-mode and custom org-mode configuration
+		       "unbound"     ;find unbound keys
+		       "window-number" ; window numbers
+		       "yasnippet"   ;provides templated completions
 		       
-		       ;;python
-		       "s" ; virtualenvwrapper dependency
+;; python-mode.el and dependencies
 		       "dash" ; virtualenvwrapper dependency
-		       "virtualenvwrapper"
 		       "rope" ; Pymacs and rope-mode, requires installation
 		              ;  see emacs-init/install/pymacs-rope
+		       "s" ; virtualenvwrapper dependency
+		       "virtualenvwrapper"
 		       "python-mode.el"
-		       "expand-region"
-		       "ido"
-		       "org"
-		       "js2-mode"
-;		       "jedi"
+
+;; personal settings
+		       "personal"
+
+;; removed pacakges
+		       ;; old configurations that are still here in case I want to re-enable them
+		       ;; superseded in emacs24      "color-theme" ;change default color-scheme
+		       ;; superseded in emacs22		       "linum"       ;line number mode
 		       ))
 (provide 'init)
 ;;; init.el ends here
