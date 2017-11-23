@@ -52,6 +52,7 @@
 					; js-beautify with
 					; npm -g install js-beautify
 			yaml-mode ; yaml-mode
+			highlight-parentheses ; highlight-parentheses-mode
 
 ;;removed for now	company ; auto-complistions with company mode
 			))
@@ -78,14 +79,15 @@
 		       "unbound"     ;find unbound keys
 		       "window-number" ; window numbers
 		       "yasnippet"   ;provides templated completions
-		       
+		       "highlight-parentheses-mode"
 ;; python-mode.el and dependencies
+		       "python-mode.el"
 		       "dash" ; virtualenvwrapper dependency
 		       "rope" ; Pymacs and rope-mode, requires installation
 		              ;  see emacs-init/install/pymacs-rope
 		       "s" ; virtualenvwrapper dependency
 		       "virtualenvwrapper"
-		       "python-mode.el"
+
 
 ;; personal settings
 		       "personal"

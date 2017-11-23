@@ -17,23 +17,26 @@
 ;;; any packages that are being installed or tried out belong here
 
 
-(require 'package)
-;; elpa archive is installed by default, add melpa, melpa-stable, and gnu
-(add-to-list 'package-archives
-            '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+  (require 'package)
+  ;; elpa archive is installed by default, add melpa, melpa-stable, and gnu
+  (add-to-list 'package-archives
+	       '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives
+	       '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
-;; make sure to have downloaded archive description.
-(or (file-exists-p package-user-dir)
-    (package-refresh-contents))
+  ;; make sure to have downloaded archive description.
+  (or (file-exists-p package-user-dir)
+      (package-refresh-contents))
 
-(package-initialize)
+  (package-initialize)
 
-(dolist (package sk:package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+  (dolist (sk:package sk:package-list)
+    (unless (package-installed-p sk:package)
+      (message "installing %s" sk:package)
+      (package-install sk:package)))
+  
+)
 ;;; package.el ends here

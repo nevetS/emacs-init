@@ -34,6 +34,7 @@
 (setq py-switch-buffers-on-execute-p nil)
 ; don't split windows
 (setq py-split-windows-on-execute-p nil)
+(setq py-load-pymacs-p nil)
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
