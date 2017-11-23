@@ -54,6 +54,23 @@ Commentary in the list files.
 *  starts emacs-server if it is not already started
 *  startup screen is disabled
 
+## Installation ##
+
+The basic installation steps are:
+
+1.  Backup/Remove current emacs configuration
+*   Fork Repo
+*   Clone from fork into ~/.emacs.d
+*   Run installation script for pymacs
+*   M-x jedi:install-server (installs jedi-server in `~/.emacs.d/.python-environments/default`)
+
+1.  It works best if this simply replaces your current emacs.d directory.  We
+    don't want to destroy all of your current customizations, so 
+
+## Python
+
+This installation includes both rope-mode and jedi.  I pre
+
 ## Trying out this configuration ##
 
 /Applications/Emacs.app/Contents/MacOS/Emacs -q -l ./init.el  --debug-init

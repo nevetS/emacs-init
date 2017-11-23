@@ -83,6 +83,7 @@
 ;; python-mode.el and dependencies
 		       "python-mode.el"
 		       "dash" ; virtualenvwrapper dependency
+		       "jedi" ; jedi-mode configuration
 		       "rope" ; Pymacs and rope-mode, requires installation
 		              ;  see emacs-init/install/pymacs-rope
 		       "s" ; virtualenvwrapper dependency

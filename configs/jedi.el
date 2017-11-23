@@ -10,6 +10,7 @@
 ;JEDI AUTO-COMPLETIONS
 (setq jedi:complete-on-dot t)
 (setq jedi:setup-keys t)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+;; alternatively jedi:ac-setup for only autocompletion
+(add-hook 'python-mode-hook 'jedi:setup)
 ;(setq jedi:complete-on-dot t)
 ;;; jedi.el ends here
