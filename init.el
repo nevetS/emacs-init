@@ -79,6 +79,7 @@
 		       "unbound"     ;find unbound keys
 		       "window-number" ; window numbers
 		       "yasnippet"   ;provides templated completions
+		       "flycheck" ;multi=language linting
 		       "highlight-parentheses-mode"
 ;; python-mode.el and dependencies
 		       "python-mode.el"
