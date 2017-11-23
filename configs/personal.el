@@ -72,7 +72,8 @@
 (outline-minor-mode 1)
 
 ; turn on Emacs server
-(unless (server-running-p)
-  (server-start))
+(if (and (fboundp 'server-running-p) 
+         (not (server-running-p)))
+   (server-start))
 
 ;;; personal.el ends here
