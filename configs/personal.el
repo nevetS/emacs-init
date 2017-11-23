@@ -76,4 +76,6 @@
          (not (server-running-p)))
    (server-start))
 
+; enable show-paren-mode
+(show-paren-mode 1)
 ;;; personal.el ends here

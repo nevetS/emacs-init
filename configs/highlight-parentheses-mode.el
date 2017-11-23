@@ -40,4 +40,11 @@
 						(hl-paren-color-update)))))))
 
 
+;; enables highlight-parentheses-mode on all buffers
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
+
 ;;; highlight-parentheses-mode.el ends here
