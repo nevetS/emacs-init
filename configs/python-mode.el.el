@@ -38,4 +38,9 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
+(defun sk_python_clean_whitespace()
+  (add-to-list 'before-save-hook 'delete-trailing-whitespace)
+  )
+
+(add-hook 'python-mode-hook 'sk_python_clean_whitespace)
 ;;; python-mode.el.el ends here
