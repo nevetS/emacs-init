@@ -50,6 +50,7 @@
               ("h" "Habit" entry (file "~/Documents/tasks/refile.org")
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
+; add python and sh support to org-mode source blocks
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
