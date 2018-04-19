@@ -89,7 +89,7 @@
 
 ; set default font on OSX
 (when (eq system-type 'darwin)
-
+  (message "setting default font to Source Code Pro")
   ;; default Latin font (e.g. Consolas)
   (set-face-attribute 'default nil :family "Source Code Pro")
 
