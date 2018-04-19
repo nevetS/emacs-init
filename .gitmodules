@@ -46,3 +46,9 @@
 [submodule "plugins/python-mode.el"]
 	path = plugins/python-mode.el
 	url = https://gitlab.com/python-mode-devs/python-mode.git
+[submodule "plugins/org-beautify-theme"]
+	path = plugins/org-beautify-theme
+	url = git@github.com:jonnay/org-beautify-theme.git
+[submodule "plugins/zenburn-emacs"]
+	path = plugins/zenburn-emacs
+	url = git@github.com:bbatsov/zenburn-emacs.git
