@@ -7,7 +7,7 @@
 ;;     Packages are installed by configs/package.el, which is the first config
 ;;     file to be loaded. If additional packages are desired, add the package
 ;;     name to the variable sk:package-list at the top of that configuration
-;;     file. 
+;;     file.
 ;;
 ;;     There are many packages that are manually installed.  I tend to prefer
 ;;     manual installation over package installation because that allows for the
@@ -53,8 +53,11 @@
 					; npm -g install js-beautify
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
-
-;;removed for now	company ; auto-complistions with company mode
+			scss-mode ; scss / sass css files
+			sqlup-mode ; make sql keywords uppercase
+			company ; auto-completions with company mode
+			hcl-mode ; hcl-mode for terraform
+			flycheck-yamllint ; linting for yaml files via flycheck
 			))
 
 
@@ -71,16 +74,20 @@
 		       "dockerfile-mode"      ;dockerfile-mode
 		       "expand-region"
 		       "fci"         ;fill column indicator
+		       "flycheck" ;multi=language linting
+		       "flycheck-yamllint" ;linting for yaml
 		       "graphviz"    ;graphviz mode
+		       "hcl-mode" ; hcl-mode configuration
+		       "highlight-parentheses-mode"
 		       "ido"         ;ido directory and buffer completion
 		       "js2-mode"    ;js2-mode for javascript development
 		       "markdown-mode"    ;markdown mode
 		       "org"         ;org-mode and custom org-mode configuration
+		       "sqlup-mode" ; sqlup-mode configuration
 		       "unbound"     ;find unbound keys
 		       "window-number" ; window numbers
 		       "yasnippet"   ;provides templated completions
-		       "flycheck" ;multi=language linting
-		       "highlight-parentheses-mode"
+
 ;; python-mode.el and dependencies
 		       "python-mode.el"
 		       "dash" ; virtualenvwrapper dependency
