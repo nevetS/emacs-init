@@ -50,6 +50,10 @@
               ("h" "Habit" entry (file "~/Documents/tasks/refile.org")
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (sh . t)))
 
 ; show closed tasks in agenda view
 (setq org-agenda-log-mode-items (quote (closed state)))
@@ -116,7 +120,7 @@
                       (window-start (selected-window)))))
 
 (defun bh/make-org-scratch ()
-  (interactive) 
+  (interactive)
   (find-file "/tmp/publish/scratch.org")
   (gnus-make-directory "/tmp/publish"))
 
@@ -127,5 +131,5 @@
 
 (setq org-use-speed-commands t)
 
-
+(require 'org-protocol)
 ;;; org.el ends here
