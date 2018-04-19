@@ -4,7 +4,7 @@
 
 ;;; Commentary:
 
-;; 
+;;
 
 ;;; Code:
 
@@ -72,10 +72,34 @@
 (outline-minor-mode 1)
 
 ; turn on Emacs server
-(if (and (fboundp 'server-running-p) 
+(if (and (fboundp 'server-running-p)
          (not (server-running-p)))
-   (server-start))
+    (server-start) ;if we have a server-running-p function AND it returns false
+  (if (not (fboundp 'server-running-p)) ;else if there simply is no server-running-p function
+      (server-start)
+  )
+ )
 
 ; enable show-paren-mode
 (show-paren-mode 1)
+
+; save desktop on exit
+(desktop-save-mode 1)
+
+
+; set default font on OSX
+(when (eq system-type 'darwin)
+
+  ;; default Latin font (e.g. Consolas)
+  (set-face-attribute 'default nil :family "Source Code Pro")
+
+  ;; default font size (point * 10)
+  ;;
+  ;; WARNING!  Depending on the default font,
+  ;; if the size is not supported very well, the frame will be clipped
+  ;; so that the beginning of the buffer may not be visible correctly.
+  (set-face-attribute 'default nil :height 125)
+
+  ;; you may want to add different for other charset in this way.
+  )
 ;;; personal.el ends here
