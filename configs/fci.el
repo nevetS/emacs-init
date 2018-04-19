@@ -23,6 +23,30 @@
 ;; default fill-column is 79
 (setq-default fill-column 79)
 
+;; from https://emacs.stackexchange.com/questions/147/how-can-i-get-a-ruler-at-column-80/155#155
+;; suppress fci when pop-ups are displayed
+;; to prevent garbling on python completion suggestions
+(defun sanityinc/fci-enabled-p ()
+  "Seems like wrapping symbols for no good reason, but what do I know.  It works."
+  (symbol-value 'fci-mode))
+
+(defvar sanityinc/fci-mode-suppressed nil)
+(make-variable-buffer-local 'sanityinc/fci-mode-suppressed)
+
+(defadvice popup-create (before suppress-fci-mode activate)
+    "Suspend fci-mode while popups are visible."
+    (let ((fci-enabled (sanityinc/fci-enabled-p)))
+      (when fci-enabled
+        (setq sanityinc/fci-mode-suppressed fci-enabled)
+        (turn-off-fci-mode))))
+
+(defadvice popup-delete (after restore-fci-mode activate)
+    "Restore fci-mode when all popups have closed."
+    (when (and sanityinc/fci-mode-suppressed
+               (null popup-instances))
+      (setq sanityinc/fci-mode-suppressed nil)
+      (turn-on-fci-mode)))
+
 ;; require the module
 (require sk:current-plugin)
 
