@@ -5,7 +5,7 @@
 ;;     entirely too large init.el
 ;;
 ;;     Packages are installed by configs/package.el, which is the first config
-;;     file to be loaded. If additional packages are desired, add the package
+;;     file to be loaded.  If additional packages are desired, add the package
 ;;     name to the variable sk:package-list at the top of that configuration
 ;;     file.
 ;;
@@ -28,20 +28,23 @@
 
 (defconst sk:emacs-config-dir (expand-file-name "configs/"
 	                      (file-name-directory load-file-name))
-                              "Path to configuration and init files")
+                              "Path to configuration and init files.")
 
 (defconst sk:emacs-plugin-path (expand-file-name "plugins/"
 	                       (file-name-directory load-file-name))
-                               "Path to plugins")
+                               "Path to plugins.")
 
 
 ;; utility function to auto-load my package configurations
 (defun sk:load-config-file (filelist)
+    "Iterate FILELIST and load each file."
     (dolist (file filelist)
       (load (expand-file-name
              (concat sk:emacs-config-dir file)))
-       (message "Loaded config file:%s" file)
+       (message "Loaded config file: %s" file)
        ))
+
+(defvar sk:package-list)
 ;; these packages are installed by the package config file
 (setq sk:package-list '(
 			expand-region
@@ -100,7 +103,7 @@
 
 ;; personal settings
 		       "personal"
-
+		       "zenburn-emacs" ;color-theme
 ;; removed pacakges
 		       ;; old configurations that are still here in case I want to re-enable them
 		       ;; superseded in emacs24      "color-theme" ;change default color-scheme
