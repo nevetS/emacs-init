@@ -55,3 +55,6 @@
 [submodule "plugins/multiple-cursors.el"]
 	path = plugins/multiple-cursors.el
 	url = git@github.com:magnars/multiple-cursors.el.git
+[submodule "plugins/labburn-theme"]
+	path = plugins/labburn-theme
+	url = git@github.com:ksjogo/labburn-theme.git

@@ -31,7 +31,7 @@
 (setq x-select-enable-clipboard-manager nil)
 
 ;enables replacing of highlighted text
-(delete-selection-mode 1)
+;(delete-selection-mode 1)
 
 ;;; backups and auto-saves.
 
@@ -84,7 +84,7 @@
 (show-paren-mode 1)
 
 ; save desktop on exit
-(desktop-save-mode 1)
+;;(desktop-save-mode 1)
 
 
 ; set default font on OSX
@@ -102,4 +102,47 @@
 
   ;; you may want to add different for other charset in this way.
   )
+
+(face-spec-set
+ 'font-lock-string-face
+ '((t :foreground "cornsilk2" ))
+ 'face-defface-spec
+ )
+
+(face-spec-set
+ 'font-lock-comment-face/
+ '((t :foreground "peach puff" ))
+ 'face-defface-spec
+ )
+
+(face-spec-set
+ 'rst-literal
+ '((t :foreground "IndianRed2" ))
+ 'face-defface-spec
+ )
+
+(face-spec-set
+ 'rst-level-2
+ '((t
+  (:family "Lucida Grande" :height 1.25 :weight bold :background "grey22")))
+ 'face-defface-spec
+ )
+(face-spec-set
+ 'rst-level-2
+ '((t
+  (:family "Lucida Grande" :height 1.5 :weight bold :background "grey22")))
+ 'face-defface-spec
+ )
+(face-spec-set
+ 'rst-level-1
+ '((t
+  (:family "Lucida Grande" :height 1.75 :weight bold :background "grey22")))
+ 'face-defface-spec
+ )
+
+;; enable upcase and downcase region commands
+;;  C-x C-u / C-x C-l
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
 ;;; personal.el ends here
