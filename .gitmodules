@@ -52,3 +52,6 @@
 [submodule "plugins/zenburn-emacs"]
 	path = plugins/zenburn-emacs
 	url = git@github.com:bbatsov/zenburn-emacs.git
+[submodule "plugins/multiple-cursors.el"]
+	path = plugins/multiple-cursors.el
+	url = git@github.com:magnars/multiple-cursors.el.git
