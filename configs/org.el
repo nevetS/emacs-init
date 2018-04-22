@@ -7,7 +7,7 @@
 
 ;;; Code:
 (if (boundp 'sk:emacs-plugin-path)
-    (add-to-list 'load-path (concat sk:emacs-plugin-path (symbol-name org-bullets)))
+    (add-to-list 'load-path (concat sk:emacs-plugin-path (symbol-name 'org-bullets)))
   (message "plugin-path not defined") ;else
     )
 
