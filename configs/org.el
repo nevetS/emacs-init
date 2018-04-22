@@ -6,6 +6,10 @@
 
 
 ;;; Code:
+(if (boundp 'sk:emacs-plugin-path)
+    (add-to-list 'load-path (concat sk:emacs-plugin-path (symbol-name org-bullets)))
+  (message "plugin-path not defined") ;else
+    )
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "IN PROGRESS(i!)" "|" "DONE(d!)")
@@ -162,4 +166,7 @@
 
 
 (require 'org-protocol)
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;;; org.el ends here

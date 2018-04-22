@@ -117,35 +117,3 @@
 		       ))
 (provide 'init)
 ;;; init.el ends here
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;;  '(ansi-color-faces-vector
-;;    [default default default italic underline success warning error])
-;;  '(ansi-color-names-vector
-;;    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
-;;  '(custom-safe-themes
-;;    (quote
-;;     ("57bb4729fc81d7b68e140dedb361b51572525c31007e1facf981751929a7fafe" default)))
-;;  '(rainbow-identifiers-choose-face-function (quote rainbow-identifiers-cie-l*a*b*-choose-face) t)
-;;  '(rainbow-identifiers-cie-l*a*b*-color-count 1024 t)
-;;  '(rainbow-identifiers-cie-l*a*b*-lightness 80 t)
-;;  '(rainbow-identifiers-cie-l*a*b*-saturation 25 t))
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(org-document-title ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5 :underline nil))))
-;;  '(org-level-1 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.75))))
-;;  '(org-level-2 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5))))
-;;  '(org-level-3 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.25))))
-;;  '(org-level-4 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.1))))
-;;  '(org-level-5 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
-;;  '(org-level-6 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
-;;  '(org-level-7 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
-;;  '(org-level-8 ((t (:inherit default :weight bold :font "Source Sans Pro")))))

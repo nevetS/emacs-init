@@ -58,3 +58,6 @@
 [submodule "plugins/labburn-theme"]
 	path = plugins/labburn-theme
 	url = git@github.com:ksjogo/labburn-theme.git
+[submodule "plugins/org-bullets"]
+	path = plugins/org-bullets
+	url = git@github.com:sabof/org-bullets.git
