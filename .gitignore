@@ -48,3 +48,6 @@ bookmarks
 ido.last
 #tramp connection history
 tramp
+
+#mulitple-cursors generated preferences
+.mc-lists.el
