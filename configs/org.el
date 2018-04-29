@@ -169,4 +169,23 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(eval-after-load 'ox-html
+  ;; If you prefer to use ~ for <code> tags. Replace "code" with
+  ;; "verbatim" here, and replace "~" with "=" below.
+  '(push '(code . "<kbd>%s</kbd>") org-html-text-markup-alist))
+
+(define-key org-mode-map "\C-ck" #'endless/insert-key)
+(defun endless/insert-key (key)
+  "Ask for a key then insert its description.
+Will work on both org-mode and any mode that accepts plain html."
+  (interactive "kType key sequence: ")
+  (let* ((orgp (derived-mode-p 'org-mode))
+         (tag (if orgp "~%s~" "<kbd>%s</kbd>")))
+    (if (null (equal key "\C-m"))
+        (insert 
+         (format tag (help-key-description key nil)))
+      ;; If you just hit RET.
+      (insert (format tag ""))
+      (forward-char (if orgp -1 -6)))))
+
 ;;; org.el ends here
