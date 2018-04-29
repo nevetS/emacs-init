@@ -31,7 +31,7 @@
 (setq x-select-enable-clipboard-manager nil)
 
 ;enables replacing of highlighted text
-;(delete-selection-mode 1)
+(delete-selection-mode 1)
 
 ;;; backups and auto-saves.
 
@@ -139,6 +139,15 @@
   (:family "Lucida Grande" :height 1.75 :weight bold :background "grey22")))
  'face-defface-spec
  )
+
+(global-set-key (read-kbd-macro "s-<return>") 'toggle-frame-fullscreen)
+
+;; yaml clean whitespace
+(defun sk_python_clean_whitespace()
+  (add-to-list 'before-save-hook 'delete-trailing-whitespace)
+  )
+
+(add-hook 'yaml-mode-hook 'sk_python_clean_whitespace)
 
 ;; enable upcase and downcase region commands
 ;;  C-x C-u / C-x C-l
