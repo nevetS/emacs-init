@@ -15,7 +15,7 @@
 (eval-when-compile (defvar sk:current-plugin)) ; defined in ~/.init.el
 
 (setq sk:current-plugin 'multiple-cursors)
-
+(selected-global-mode 1)
 (if (boundp 'sk:emacs-plugin-path)
     (add-to-list 'load-path (concat sk:emacs-plugin-path (symbol-name 'multiple-cursors.el)))
   (message "plugin-path not defined") ;else
@@ -25,13 +25,13 @@
 ;; (require sk:current-plugin)
 ;; (global-set-key (kbd "C-c m") 'mc/mark-next-like-this)
 ;; (global-set-key (kbd "C-c n") 'mc/mark-sgml-tag-pair)
-
+(message "RUNNING MULTIPLE CURSORS STARTUP")
 (use-package multiple-cursors
   ;; stolen from https://github.com/jwiegley/dot-emacs/blob/master/init.el
 
-  ;; :after phi-search
-  ;; :defer 5
-
+;;  :after phi-search
+;;  :defer 5
+  :demand
   ;; - Sometimes you end up with cursors outside of your view. You can scroll
   ;;   the screen to center on each cursor with `C-v` and `M-v`.
   ;;
@@ -86,5 +86,5 @@
   (defun reactivate-mark ()
     (interactive)
     (activate-mark)))
-
+(message "COMPLETED MULTIPLE CURSORS STARTUP")
 ;;; multiple-cursors.el ends here
