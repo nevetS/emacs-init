@@ -61,3 +61,6 @@
 [submodule "plugins/org-bullets"]
 	path = plugins/org-bullets
 	url = git@github.com:sabof/org-bullets.git
+[submodule "plugins/phi-search"]
+	path = plugins/phi-search
+	url = git@github.com:zk-phi/phi-search.git
