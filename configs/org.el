@@ -23,6 +23,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (setq org-agenda-files (quote ("~/Documents/tasks/")))
+(setq org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 (setq org-directory "~/Documents/tasks")
 (setq org-default-notes-file "~/Documents/tasks/refile.org")
 
@@ -182,10 +183,15 @@ Will work on both org-mode and any mode that accepts plain html."
   (let* ((orgp (derived-mode-p 'org-mode))
          (tag (if orgp "~%s~" "<kbd>%s</kbd>")))
     (if (null (equal key "\C-m"))
-        (insert 
+        (insert
          (format tag (help-key-description key nil)))
       ;; If you just hit RET.
       (insert (format tag ""))
       (forward-char (if orgp -1 -6)))))
 
+;; set priorities
+(setq org-highest-priority ?A)
+(setq org-lowest-priority ?E)
+(setq org-default-priority ?C)
+(setq org-return-follows-link t)
 ;;; org.el ends here
