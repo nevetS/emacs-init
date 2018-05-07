@@ -154,4 +154,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; hide *buffers from ido
+(setq ido-ignore-buffers '("\*.*\*"))
 ;;; personal.el ends here
