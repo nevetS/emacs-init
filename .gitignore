@@ -51,3 +51,12 @@ tramp
 
 #mulitple-cursors generated preferences
 .mc-lists.el
+
+# created by gnus
+network-security.data
+
+#projectile files
+projectile-bookmarks.eld
+projectile.cache
+
+.python-environments/

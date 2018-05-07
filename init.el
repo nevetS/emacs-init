@@ -26,6 +26,13 @@
 ;;; Code:
 
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defconst sk:emacs-config-dir (expand-file-name "configs/"
 	                      (file-name-directory load-file-name))
                               "Path to configuration and init files.")
@@ -47,6 +54,9 @@
 (defvar sk:package-list)
 ;; these packages are installed by the package config file
 (setq sk:package-list '(
+			all-the-icons
+			counsel ;
+			counsel-projectile ;
 			expand-region
 			flycheck ; syntax checking for python
 			jedi  ; jedi-mode for python development
@@ -56,8 +66,12 @@
 					; npm -g install js-beautify
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
+			ivy ; ido-mode replacement
+			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
 			scss-mode ; scss / sass css files
+			spaceline ; mode line customizations
+			spaceline-all-the-icons ; mode line update
 			sqlup-mode ; make sql keywords uppercase
 			company ; auto-completions with company mode
 			hcl-mode ; hcl-mode for terraform
@@ -80,17 +94,22 @@
 		       "autopair"    ;close parens/brackets/etc
 		       "dockerfile-mode"      ;dockerfile-mode
 		       "expand-region"
+		       "erc"
 		       "fci"         ;fill column indicator
 		       "flycheck" ;multi=language linting
 		       "flycheck-yamllint" ;linting for yaml
 		       "graphviz"    ;graphviz mode
+		       "gnus" ; gnus mail reader
 		       "hcl-mode" ; hcl-mode configuration
 		       "highlight-parentheses-mode"
-		       "ido"         ;ido directory and buffer completion
+		       "ivy" ; ido replacement
+		       "ido"         ;ido directory and buffer completion - removed to try out ivy-mode
 		       "js2-mode"    ;js2-mode for javascript development
 		       "markdown-mode"    ;markdown mode
 		       "multiple-cursors" ; multiple-cursors mode
 		       "org"         ;org-mode and custom org-mode configuration
+		       "projectile"
+                       "spaceline-all-the-icons" ; mode line update
 		       "sqlup-mode" ; sqlup-mode configuration
 		       "unbound"     ;find unbound keys
 		       "window-number" ; window numbers
@@ -104,8 +123,6 @@
 		              ;  see emacs-init/install/pymacs-rope
 		       "s" ; virtualenvwrapper dependency
 		       "virtualenvwrapper"
-
-
 ;; personal settings
 
 		       "labburn-theme" ;color-theme
@@ -118,29 +135,3 @@
 		       ))
 (provide 'init)
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("57bb4729fc81d7b68e140dedb361b51572525c31007e1facf981751929a7fafe" default)))
- '(rainbow-identifiers-choose-face-function (quote rainbow-identifiers-cie-l*a*b*-choose-face))
- '(rainbow-identifiers-cie-l*a*b*-color-count 1024)
- '(rainbow-identifiers-cie-l*a*b*-lightness 80)
- '(rainbow-identifiers-cie-l*a*b*-saturation 25))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.75))))
- '(org-level-2 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
- '(org-level-6 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
- '(org-level-7 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
- '(org-level-8 ((t (:inherit default :weight bold :font "Source Sans Pro")))))

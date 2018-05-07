@@ -102,26 +102,26 @@
 ;;   (setq gnus-sum-thread-tree-vertical "│")
 ;;   (setq gnus-sum-thread-tree-single-leaf "╰─► "))
 
-(cond (window-system
-       (setq custom-background-mode 'light)
-       (defface my-group-face-1
-         '((t ( :foreground "white" :bold t))) "First group face")
-       (defface my-group-face-2
-         '((t ( :foreground "red" :bold t)))
-         "Second group face")
-       (defface my-group-face-3
-         '((t ( :foreground "ivy" :bold t))) "Third group face")
-       (defface my-group-face-4
-         '((t ( :foreground "pink" :bold t))) "Fourth group face")
-       (defface my-group-face-5
-         '((t ( :foreground "orange" :bold t))) "Fifth group face")))
+;; (cond (window-system
+;;        (setq custom-background-mode 'dark)
+;;        (defface my-group-face-1
+;;          '((t ( :foreground "white" :bold t))) "First group face")
+;;        (defface my-group-face-2
+;;          '((t ( :foreground "red" :bold t)))
+;;          "Second group face")
+;;        (defface my-group-face-3
+;;          '((t ( :foreground "ivy" :bold t))) "Third group face")
+;;        (defface my-group-face-4
+;;          '((t ( :foreground "pink" :bold t))) "Fourth group face")
+;;        (defface my-group-face-5
+;;          '((t ( :foreground "orange" :bold t))) "Fifth group face")))
 
-(setq gnus-group-highlight
-      '(((> unread 200) . my-group-face-1)
-        ((and (< level 3) (zerop unread)) . my-group-face-2)
-        ((< level 3) . my-group-face-3)
-        ((zerop unread) . my-group-face-4)
-        (t . my-group-face-5)))
+;; (setq gnus-group-highlight
+;;       '(((> unread 200) . my-group-face-1)
+;;         ((and (< level 3) (zerop unread)) . my-group-face-2)
+;;         ((< level 3) . my-group-face-3)
+;;         ((zerop unread) . my-group-face-4)
+;;         (t . my-group-face-5)))
 
 ;; display groups (imap folders)
 ;; (setq gnus-group-line-format "\t%4m%P%M%STotal Messages: %5t\t[%20G\] \tNew Messages: (%y)\n")
