@@ -18,8 +18,8 @@
     )
 
 ;; turn on autofill in text-mode and python-mode
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'python-mode-hook 'turn-on-auto-fill)
+;;(add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; (add-hook 'python-mode-hook 'turn-on-auto-fill)
 ;; default fill-column is 79
 (setq-default fill-column 79)
 
@@ -53,6 +53,6 @@
 ;; set width of indicator and color
 (setq fci-rule-width 1)
 (setq fci-rule-color "#7f9f7f")
-(add-hook 'after-change-major-mode-hook 'fci-mode)
+;;(add-hook 'after-change-major-mode-hook 'fci-mode)
 
 ;;; fci.el ends here

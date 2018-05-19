@@ -156,4 +156,11 @@
 
 ;; hide *buffers from ido
 (setq ido-ignore-buffers '("\*.*\*"))
+
+;; (defun sk/org-insert-key ()
+;;     (interactive)
+;;     (insert "~"
+;; 	    (key-description(read-key-sequence-vector "Enter a keybinding:"))
+;; 	    "~"))
+
 ;;; personal.el ends here
