@@ -18,6 +18,7 @@
 
 
   (require 'package)
+  (package-initialize)
   ;; elpa archive is installed by default, add melpa, melpa-stable, and gnu
   (add-to-list 'package-archives
 	       '("melpa" . "http://melpa.org/packages/") t)

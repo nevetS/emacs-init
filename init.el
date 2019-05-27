@@ -27,12 +27,6 @@
 
 
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (defconst sk:emacs-config-dir (expand-file-name "configs/"
 	                      (file-name-directory load-file-name))
                               "Path to configuration and init files.")
@@ -108,7 +102,17 @@
 		       "js2-mode"    ;js2-mode for javascript development
 		       "markdown-mode"    ;markdown mode
 		       "multiple-cursors" ; multiple-cursors mode
-		       "org"         ;org-mode and custom org-mode configuration
+;		       "org"         ;org-mode and custom org-mode configuration
+
+		       "org/functions" ; functions specific to org-mode
+		       "org/basics" ; basic org-mode configuration
+		       "org/config_variables" ; org config variables
+		       "org/agenda" ; org agenda
+		       "org/babel" ; source code in org
+		       "org/capture-templates" ; capture templates in org
+		       "org/tasks" ; task configuration in org
+		       "org/keybindings" ; keybindings in org
+		       "org/appearance" ; org look and feel
 		       "projectile"
                        "spaceline-all-the-icons" ; mode line update
 		       "sqlup-mode" ; sqlup-mode configuration
