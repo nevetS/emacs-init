@@ -67,6 +67,7 @@
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
 			ivy ; ido-mode replacement
+			ox-hugo ; org mode to Hugo exporter
 			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
 			scss-mode ; scss / sass css files
