@@ -10,3 +10,6 @@
 (setq org-highest-priority ?A)
 (setq org-lowest-priority ?E)
 (setq org-default-priority ?C)
+(setq org-use-speed-commands t)
+(setq org-return-follows-link t)
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
