@@ -18,7 +18,9 @@
   (message "plugin-path not defined") ;else
     )
 ;; require the module
-(require sk:current-plugin)
+(if (boundp 'sk:current-plugin)
+    (require sk:current-plugin))
+
 
 
 
