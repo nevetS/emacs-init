@@ -102,8 +102,7 @@
 		       "js2-mode"    ;js2-mode for javascript development
 		       "markdown-mode"    ;markdown mode
 		       "multiple-cursors" ; multiple-cursors mode
-		       "org/config_variables" ; org config variables
-		       "org/agenda" ; org agenda
+		       "org/org_config_variables" ; org config variables
 		       "org/babel" ; source code in org
 		       "org/capture-templates" ; capture templates in org
 		       "org/tasks" ; task configuration in org
