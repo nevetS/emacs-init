@@ -4,7 +4,7 @@
 
 ;;; Commentary:
 
-;; Compatibility: Emacs 26.2 or newer.  May work in older versions, may not
+;;; Compatibility: Emacs 26.2 or newer.  May work in older versions, may not
 
 ;;; Code:
 
@@ -20,7 +20,7 @@
 (eval-when-compile (defvar org-agenda-files)) ; defined by org-mode
 (eval-when-compile (defvar org-refile-targets)) ; defined by org-mode
 (eval-when-compile (defvar org-default-notes-file)) ; defined by org-mode
-
+(eval-when-compile (defvar org-log-into-drawer)) ; defined by source
 ;add latex to PATH and exec-path
 (setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
@@ -35,6 +35,7 @@
 (setq org-default-priority ?C)
 (setq org-use-speed-commands t)
 (setq org-return-follows-link t)
+(setq org-log-into-drawer t)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;; AGENDA related configuration
@@ -49,5 +50,8 @@
 (setq org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 ;; when capturing and not refiling tasks, place them in this file.
 (setq org-default-notes-file "~/Documents/tasks/refile.org")
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 (provide 'org_config_variables)
-;org_config_variables.el ends here
+
+;;; org_config_variables.el ends here

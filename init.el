@@ -49,18 +49,28 @@
 ;; these packages are installed by the package config file
 (setq sk:package-list '(
 			all-the-icons
+;			auctex ; 
 			counsel ;
 			counsel-projectile ;
-			expand-region
+			expand-region ;
+;			emacs-ess ; emacs speaks statistics
 			flycheck ; syntax checking for python
+			gnuplot-mode ; support for gnu-plot
+			google-translate ; google-translate
 			jedi  ; jedi-mode for python development
+			plantuml-mode ; uml diagrams - this may require manual installation with M-x package-install
 			magit ; git integration
+			sass-mode ; sass for css
+;			slime ; lisp development
 			web-beautify ; in order to use this, install
 					; js-beautify with
 					; npm -g install js-beautify
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
 			ivy ; ido-mode replacement
+			ob-browser ; screenshots in org-mode
+			ob-http ; http request in org-mode
+			ob-translate ; google translate in org-mode
 			ox-hugo ; org mode to Hugo exporter
 			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
@@ -74,6 +84,7 @@
 			flycheck-yamllint ; linting for yaml files via flycheck
 			use-package ; tools for loading packages
 			selected ; helper for multiple-cursors
+			wsd-mode ; web sequence diagrams https://github.com/josteink/wsd-mode
 			))
 
 
@@ -103,12 +114,13 @@
 		       "markdown-mode"    ;markdown mode
 		       "multiple-cursors" ; multiple-cursors mode
 		       "org/org_config_variables" ; org config variables
-		       "org/babel" ; source code in org
+		       "org/org_babel" ; source code in org
 		       "org/capture-templates" ; capture templates in org
-		       "org/tasks" ; task configuration in org
+		       "org/org_tasks" ; task configuration in org
 		       "org/keybindings" ; keybindings in org
 		       "org/appearance" ; org look and feel
 		       "org/exports" ; export templates
+		       "plantuml" ; uml diagrams
 		       "projectile"
                        "spaceline-all-the-icons" ; mode line update
 		       "sqlup-mode" ; sqlup-mode configuration

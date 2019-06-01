@@ -8,13 +8,11 @@
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
               ("j" "Journal" entry (file+datetree "~/Documents/tasks/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/Documents/tasks/refile.org")
-               "* TODO Review %c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/Documents/tasks/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ;; ("p" "Phone call" entry (file "~/Documents/tasks/refile.org")
-              ;;  "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("p"                ;`org-capture' binding + h
+              ("p" "Phone call" entry (file "~/Documents/tasks/refile.org")
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("h"                ;`org-capture' binding + h
                  "Hugo post"
                  entry
                  ;; It is assumed that below file is present in `org-directory'

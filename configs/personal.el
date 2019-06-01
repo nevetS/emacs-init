@@ -157,10 +157,24 @@
 ;; hide *buffers from ido
 (setq ido-ignore-buffers '("\*.*\*"))
 
-;; (defun sk/org-insert-key ()
-;;     (interactive)
-;;     (insert "~"
-;; 	    (key-description(read-key-sequence-vector "Enter a keybinding:"))
-;; 	    "~"))
+;; transposing lines
+;; from https://emacsredux.com/blog/2013/04/02/move-current-line-up-or-down/
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(meta shift up)]  'move-line-up)
+(global-set-key [(meta shift down)]  'move-line-down)
 
 ;;; personal.el ends here
