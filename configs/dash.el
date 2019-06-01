@@ -21,7 +21,4 @@
 (if (boundp 'sk:current-plugin)
     (require sk:current-plugin))
 
-
-
-
 ;;; dash.el ends here
