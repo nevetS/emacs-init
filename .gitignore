@@ -60,3 +60,6 @@ projectile-bookmarks.eld
 projectile.cache
 
 .python-environments/
+
+#cookies from Emacs-W3
+url/cookies
