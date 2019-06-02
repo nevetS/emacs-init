@@ -68,6 +68,7 @@
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
 			ivy ; ido-mode replacement
+			ob-blockdiag ;block diag for babel
 			ob-browser ; screenshots in org-mode
 			ob-http ; http request in org-mode
 			ob-translate ; google translate in org-mode
