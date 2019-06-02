@@ -22,6 +22,7 @@
    (blockdiag . t) ; blockdiag
    (calc . t)
    (css . t)
+   (ditaa . t) ; ascii boxes to flow charts
    (dot . t) ; requires graphviz
    (gnuplot . t) ; requires gnuplot
    (http . t)
