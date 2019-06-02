@@ -19,6 +19,7 @@
  'org-babel-load-languages
  '((awk . t)
    (browser . t) ; requires phantomjs
+   (blockdiag . t) ; blockdiag
    (calc . t)
    (css . t)
    (dot . t) ; requires graphviz
