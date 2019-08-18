@@ -6,17 +6,18 @@
 *_flymake.*
 
 # eshell files
-/eshell/history
-/eshell/lastdir
+eshell/
 
+# magit stores some stuff in transient
+transient/
 # elpa packages
-/elpa/
+elpa/
 
 # reftex files
 *.rel
 
 # AUCTeX auto folder
-/auto/
+auto/
 
 # cask packages
 .cask/
@@ -63,3 +64,7 @@ projectile.cache
 
 #cookies from Emacs-W3
 url/cookies
+
+# org generates .org-id-locations,
+# skip whatever else it might generate
+.org*
