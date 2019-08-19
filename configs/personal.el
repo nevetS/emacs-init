@@ -177,4 +177,6 @@
 (global-set-key [(meta shift up)]  'move-line-up)
 (global-set-key [(meta shift down)]  'move-line-down)
 
+;; single dired buffer using 'a' on path
+(put 'dired-find-alternate-file 'disabled nil)
 ;;; personal.el ends here
