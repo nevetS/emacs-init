@@ -51,10 +51,12 @@
 			all-the-icons
 ;			auctex ;
 			counsel ;
+			counsel-etags ; etags for counsel
 			counsel-projectile ;
 			expand-region ;
 ;			emacs-ess ; emacs speaks statistics
 			flycheck ; syntax checking for python
+			ggtags ;
 			gnuplot ; gnuplot
 			gnuplot-mode ; support for gnu-plot
 			google-translate ; google-translate
@@ -76,7 +78,9 @@
 			ox-hugo ; org mode to Hugo exporter
 			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
+			rjsx-mode ; react / react-native
 			scss-mode ; scss / sass css files
+			salt-mode ; SaltStack
 			spaceline ; mode line customizations
 			spaceline-all-the-icons ; mode line update
 			sqlup-mode ; make sql keywords uppercase
