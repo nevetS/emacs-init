@@ -102,6 +102,9 @@
 
   ;; you may want to add different for other charset in this way.
   )
+(when (eq system-type 'gnu/linux)
+  (set-face-attribute 'default nil :family "Source Code Variable")
+	(set-face-attribute 'default nil :height 125))
 
 (face-spec-set
  'font-lock-string-face
