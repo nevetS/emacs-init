@@ -9,8 +9,9 @@
 (eval-when-compile (defvar sk:emacs-plugin-path)) ; defined in ~/.init.el
 (eval-when-compile (defvar sk:current-plugin)) ; defined in ~/.init.el
 (eval-when-compile (defvar js2-mirror-mode)) ; defined in js2-mode
-(eval-when-compile (defvar js2-include-node-externs)) ; defined in ~/.init.el
-(eval-when-compile (defvar js2-bounce-indent-p)) ; defined in ~/.init.el
+(eval-when-compile (defvar js2-include-node-externs)) ; defined js2-mode
+(eval-when-compile (defvar js2-bounce-indent-p)) ; defined in js2-mode
+(eval-when-compile (defvar js2-basic-offset)) ; defined in js2-mode
 
 (setq sk:current-plugin 'js2-mode)
 
@@ -47,6 +48,9 @@
   ;; get rid of annoying node errors
   (setq js2-include-node-externs t)
   (setq js2-bounce-indent-p t)
+  (setq js2-basic-offset 2)
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 )
 
 
