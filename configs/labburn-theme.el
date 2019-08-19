@@ -22,10 +22,19 @@
   (message "plugin-path not defined") ;else
     )
 
-
+(custom-theme-set-faces
+ 'labburn
+ '(region-face ((t (:foreground "#DFAF8F"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#DFAF8F")))))
 
 ;; require the module
 ;(require sk:current-plugin)
+(custom-theme-set-faces
+ 'labburn
+ '(region ((t (:background "#6e5a6a"))))
+ '(secondary-selection ((t (:background "#DFAAAA"))))
+ '(ivy-current-match ((t (:background "#6e5a6a"))))
+ )
 
 (load-theme 'labburn t)
 
