@@ -22,21 +22,20 @@
   (message "plugin-path not defined") ;else
     )
 
-(custom-theme-set-faces
- 'labburn
- '(region-face ((t (:foreground "#DFAF8F"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "#DFAF8F")))))
+
 
 ;; require the module
 ;(require sk:current-plugin)
+
+(load-theme 'labburn t)
 (custom-theme-set-faces
  'labburn
+ '(region-face ((t (:foreground "#DFAF8F"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#DFAF8F"))))
  '(region ((t (:background "#6e5a6a"))))
  '(secondary-selection ((t (:background "#DFAAAA"))))
  '(ivy-current-match ((t (:background "#6e5a6a"))))
  )
-
-(load-theme 'labburn t)
 
 
 ;;; org-beautify-theme.el ends here
