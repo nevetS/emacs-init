@@ -60,6 +60,7 @@
 			gnuplot ; gnuplot
 			gnuplot-mode ; support for gnu-plot
 			google-translate ; google-translate
+			hydra ; hydras
 			;; jedi  ; jedi-mode for python development
 			plantuml-mode ; uml diagrams - this may require manual installation with M-x package-install
 			magit ; git integration
@@ -78,7 +79,7 @@
 			ox-hugo ; org mode to Hugo exporter
 			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
-			rjsx-mode ; react / react-native
+			;; rjsx-mode ; react / react-native
 			scss-mode ; scss / sass css files
 			salt-mode ; SaltStack
 			spaceline ; mode line customizations
@@ -89,10 +90,11 @@
 			htmlize ; org-export agenda
 			flycheck-yamllint ; linting for yaml files via flycheck
 			use-package ; tools for loading packages
+			use-package-hydra ; define hydras within use-package blocks
 			selected ; helper for multiple-cursors
 			wsd-mode ; web sequence diagrams https://github.com/josteink/wsd-mode
 			))
-
+;;
 
 ;; packages to be loaded configured are in alphabetical order except in the
 ;; following situations:
@@ -116,7 +118,7 @@
 		       "highlight-parentheses-mode"
 		       "ivy" ; ido replacement
 		       "ido"         ;ido directory and buffer completion - removed to try out ivy-mode
-		       "js2-mode"    ;js2-mode for javascript development
+		       ;; "js2-mode"    ;js2-mode for javascript development
 		       "markdown-mode"    ;markdown mode
 		       "multiple-cursors" ; multiple-cursors mode
 		       "org/org_config_variables" ; org config variables
@@ -154,4 +156,3 @@
 		       ))
 (provide 'init)
 ;;; init.el ends here
-
