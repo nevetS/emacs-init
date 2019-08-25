@@ -15,7 +15,7 @@
 (require sk:current-plugin)
 (setq projectile-indexing-method 'native)
 (setq projectile-enable-caching t)
-(setq projectile-tags-command "~/bin/etags_python")
+(setq projectile-tags-command "~/bin/dotags")
 (defadvice projectile-project-root (around ignore-remote first activate)
     (unless (file-remote-p default-directory) ad-do-it))
 
@@ -40,4 +40,5 @@
 
 (counsel-projectile-mode)
 (global-set-key (kbd "C-\\") 'projectile-toggle-between-implementation-and-test)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 ;;; 3.el ends here
