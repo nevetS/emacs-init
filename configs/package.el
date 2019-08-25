@@ -34,12 +34,15 @@
   (or (file-exists-p package-user-dir)
       (package-refresh-contents))
 
+  (use-package use-package-hydra
+    :ensure t)
+
   (package-initialize)
 
   (dolist (sk:package sk:package-list)
     (unless (package-installed-p sk:package)
       (message "installing %s" sk:package)
       (package-install sk:package)))
-  
+
 )
 ;;; package.el ends here
