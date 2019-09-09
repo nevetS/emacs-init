@@ -106,7 +106,7 @@
 				     ; initializes packages
 ;; main packages
 		       "autopair"    ;close parens/brackets/etc - turn off autopair in favor of electric-pair
-		       "dockerfile-mode"      ;dockerfile-mode
+		       ;; "dockerfile-mode"      ;dockerfile-mode
 		       "expand-region"
 		       "erc"
 		       "fci"         ;fill column indicator
@@ -154,7 +154,12 @@
 		       ;; superseded in emacs24      "color-theme" ;change default color-scheme
 		       ;; superseded in emacs22		       "linum"       ;line number mode
 		       ))
-(load "~/.emacs.d/configs/frame-cmds-config.el")
+;; (load "~/.emacs.d/configs/frame-cmds-config.el")
+(add-to-list 'load-path "~/.emacs.d/configs/")
+(require 'dockerfile-mode-config)
 (require 'frame-cmds-config)
+;;(add-to-list 'load-path '~/.emacs.d/configs/dockerfile-mode-config.el)
+
+
 (provide 'init)
 ;;; init.el ends here
