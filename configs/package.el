@@ -19,7 +19,7 @@
 
 
   (require 'package)
-  (package-initialize)
+
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
   ;; elpa archive is installed by default, add melpa, melpa-stable, and gnu
   (add-to-list 'package-archives
