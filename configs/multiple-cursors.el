@@ -15,14 +15,12 @@
 (eval-when-compile (defvar sk:current-plugin)) ; defined in ~/.init.el
 (eval-when-compile (defvar selected-keymap)) ; defined in ~/.init.el
 
-
 (setq sk:current-plugin 'multiple-cursors)
 (selected-global-mode 1)
 (if (boundp 'sk:emacs-plugin-path)
     (add-to-list 'load-path (concat sk:emacs-plugin-path (symbol-name 'multiple-cursors.el)))
   (message "plugin-path not defined") ;else
     )
-
 ;; require the module
 ;; (require sk:current-plugin)
 ;; (global-set-key (kbd "C-c m") 'mc/mark-next-like-this)
@@ -41,15 +39,16 @@
   ;;   from the kill-ring of main cursor. To yank from the kill-rings of every
   ;;   cursor use yank-rectangle, normally found at C-x r y.
 
-  :bind (("C-c m" . hydra-multiple-cursors/body)
+  :bind (("C-c *" . hydra-multiple-cursors/body)
 	 ("S-<mouse-1>" . mc/add-cursor-on-click))
+
   :hydra (hydra-multiple-cursors (:hint nil :color pink)
   "
  Up^^             Down^^           Miscellaneous           % 2(mc/num-cursors) cursor%s(if (> (mc/num-cursors) 1) \"s\" \"\")
 ------------------------------------------------------------------
  [_p_]   Next     [_n_]   Next     [_l_] Edit lines  [_0_] Insert numbers
- [_P_]   Skip     [_N_]   Skip     [_a_] Mark all    [_2_] Fancy numbers
- [_M-p_] Unmark   [_M-n_] Unmark   [_s_] Search      [_A_] Insert letters
+ [_P_]   Skip     [_N_]   Skip     [_a_] Mark all    [_A_] Insert letters
+ [_M-p_] Unmark   [_M-n_] Unmark   [_s_] Search      
  [Click] Cursor at point       [_q_] Quit"
   ("l" mc/edit-lines :exit nil)
   ("a" mc/mark-all-like-this :color blue)
