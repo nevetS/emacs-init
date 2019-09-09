@@ -28,6 +28,6 @@
 ;; (set-default 'autopair-dont-activate #'(lambda () (eq major-mode 'graphviz-dot-mode)))
 
 ; turn on autopair globally
-(autopair-global-mode)
+;;(autopair-global-mode)
 
 ;;; autopair.el ends here
