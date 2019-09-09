@@ -2,6 +2,11 @@
 \#*\#
 *~
 
+# recent files
+recentf
+
+# requests
+request/
 # flymake-mode
 *_flymake.*
 
