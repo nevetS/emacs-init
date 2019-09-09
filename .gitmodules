@@ -64,3 +64,6 @@
 [submodule "plugins/phi-search"]
 	path = plugins/phi-search
 	url = git@github.com:zk-phi/phi-search.git
+[submodule "plugins/frame-cmds"]
+	path = plugins/frame-cmds
+	url = git@github.com:emacsmirror/frame-cmds.git
