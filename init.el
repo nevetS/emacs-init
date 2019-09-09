@@ -82,8 +82,8 @@
 			;; rjsx-mode ; react / react-native
 			scss-mode ; scss / sass css files
 			salt-mode ; SaltStack
-			spaceline ; mode line customizations
-			spaceline-all-the-icons ; mode line update
+			;; spaceline ; mode line customizations
+			;; spaceline-all-the-icons ; mode line update
 			sqlup-mode ; make sql keywords uppercase
 			company ; auto-completions with company mode
 			hcl-mode ; hcl-mode for terraform
@@ -105,7 +105,7 @@
 		       "package"     ; installs any missing packages,
 				     ; initializes packages
 ;; main packages
-		       "autopair"    ;close parens/brackets/etc
+		       "autopair"    ;close parens/brackets/etc - turn off autopair in favor of electric-pair
 		       "dockerfile-mode"      ;dockerfile-mode
 		       "expand-region"
 		       "erc"
@@ -130,20 +130,20 @@
 		       "org/exports" ; export templates
 		       "plantuml" ; uml diagrams
 		       "projectile"
-                       "spaceline-all-the-icons" ; mode line update
+                       ;; "spaceline-all-the-icons" ; mode line update
 		       "sqlup-mode" ; sqlup-mode configuration
 		       "unbound"     ;find unbound keys
 		       "window-number" ; window numbers
 		       "yasnippet"   ;provides templated completions
 
 ;; python-mode.el and dependencies
-		       "python-mode.el"
-		       "dash" ; virtualenvwrapper dependency
-		       ;; "jedi" ; jedi-mode configuration
-		       ;; "rope" ; Pymacs and rope-mode, requires installation
-		       ;;        ;  see emacs-init/install/pymacs-rope
-		       "s" ; virtualenvwrapper dependency
-		       "virtualenvwrapper"
+		       ;; "python-mode.el"
+		       ;; "dash" ; virtualenvwrapper dependency
+		       ;; ;; "jedi" ; jedi-mode configuration
+		       ;; ;; "rope" ; Pymacs and rope-mode, requires installation
+		       ;; ;;        ;  see emacs-init/install/pymacs-rope
+		       ;; "s" ; virtualenvwrapper dependency
+		       ;; "virtualenvwrapper"
 ;; personal settings
 
 		       "labburn-theme" ;color-theme
@@ -154,5 +154,7 @@
 		       ;; superseded in emacs24      "color-theme" ;change default color-scheme
 		       ;; superseded in emacs22		       "linum"       ;line number mode
 		       ))
+(load "~/.emacs.d/configs/frame-cmds-config.el")
+(require 'frame-cmds-config)
 (provide 'init)
 ;;; init.el ends here
