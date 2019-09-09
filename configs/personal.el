@@ -25,7 +25,7 @@
 (tool-bar-mode -1)
 
 ;menu bar available on ctrl-right click
-(menu-bar-mode -99)
+(menu-bar-mode -1)
 
 ;TODO look up what this does
 (setq x-select-enable-clipboard-manager nil)
@@ -43,14 +43,14 @@
   version-control t      ; Use version numbers on backups
   delete-old-versions t  ; Automatically delete excess backups
   kept-new-versions 6   ; how many of the newest versions to keep
-  kept-old-versions 2    ; and how many of the old
+  kept-old-versions 6    ; and how many of the old
   )
 
 
 
 ;The following pushes autosaves from the current directory into an
 ; autosaves directory
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/" t)))
 
 ;The following stops the creation of lockfiles.
 ; essentially, whenever a file is opened, if this is t, a sym link gets created
@@ -107,6 +107,15 @@
 	(set-face-attribute 'default nil :height 125))
 
 (face-spec-set
+ 'region
+ '((t :background "steel blue"))
+ 'face-defface-spec)
+(face-spec-set
+ 'ivy-current-match
+ '((t :background "brown"))
+ 'face-defface-spec)
+
+(face-spec-set
  'font-lock-string-face
  '((t :foreground "cornsilk2" ))
  'face-defface-spec
@@ -146,11 +155,11 @@
 (global-set-key (read-kbd-macro "s-<return>") 'toggle-frame-fullscreen)
 
 ;; yaml clean whitespace
-(defun sk_python_clean_whitespace()
-  (add-to-list 'before-save-hook 'delete-trailing-whitespace)
-  )
-
-(add-hook 'yaml-mode-hook 'sk_python_clean_whitespace)
+;; (defun sk_python_clean_whitespace()
+;;   (add-to-list 'before-save-hook 'delete-trailing-whitespace)
+;;   )
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'yaml-mode-hook 'sk_python_clean_whitespace)
 
 ;; enable upcase and downcase region commands
 ;;  C-x C-u / C-x C-l
@@ -182,4 +191,5 @@
 
 ;; single dired buffer using 'a' on path
 (put 'dired-find-alternate-file 'disabled nil)
+(electric-pair-mode)
 ;;; personal.el ends here
