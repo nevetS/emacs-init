@@ -15,9 +15,10 @@
 ;; In Emacs 24.4 or newer, it's recommended to use electric-pair-mode instead
 
 ;;; Code:
-(eval-when-compile (defvar sk:emacs-plugin-path)) ; defined in ~/.init.el
-(eval-when-compile (defvar sk:current-plugin)) ; defined in ~/.init.el
-
+(eval-when-compile (defvar sk:emacs-plugin-path)) ; defined in init.el
+"sk:emacs-plugin-path is the folder where repo based packages are found"
+(eval-when-compile (defvar sk:current-plugin)) ; defined in init.el
+"sk:current-plugin"
 (setq sk:current-plugin 'unbound)
 
 (if (boundp 'sk:emacs-plugin-path)
