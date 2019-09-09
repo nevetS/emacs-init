@@ -20,5 +20,12 @@
 (require sk:current-plugin)
 ;turn it on
 (window-number-mode)
-
+ (defhydra hydra-splitter ()
+    "splitter"
+    ("h" hydra-move-splitter-left)
+    ("j" hydra-move-splitter-down)
+    ("k" hydra-move-splitter-up)
+    ("l" hydra-move-splitter-right)
+    ("q" nil :color blue))
+(global-set-key (kbd "C-c s") 'hydra-splitter/body)
 ;;; window-number.el ends here
