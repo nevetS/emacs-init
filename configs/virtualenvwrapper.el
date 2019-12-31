@@ -27,7 +27,7 @@
 ;; note that setting `venv-location` is not necessary if you
 ;; use the default location (`~/.virtualenvs`), or if the
 ;; the environment variable `WORKON_HOME` points to the right place
-(setq venv-location "~/venvs/")
+(setq venv-location "~/.venvs/")
 
 (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
 ;;; virtualenvwrapper.el ends here
