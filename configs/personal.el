@@ -103,8 +103,8 @@
   ;; you may want to add different for other charset in this way.
   )
 (when (eq system-type 'gnu/linux)
-  (set-face-attribute 'default nil :family "Source Code Variable")
-	(set-face-attribute 'default nil :height 125))
+  (set-face-attribute 'default nil :family "Source Code Pro")
+	(set-face-attribute 'default nil :height 100))
 
 (face-spec-set
  'region
@@ -188,8 +188,13 @@
 
 (global-set-key [(meta shift up)]  'move-line-up)
 (global-set-key [(meta shift down)]  'move-line-down)
-
+(setenv "WORKON_HOME"
+	"~.venvs/")
 ;; single dired buffer using 'a' on path
 (put 'dired-find-alternate-file 'disabled nil)
 (electric-pair-mode)
+
+;;chmod +x shell scripts
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
 ;;; personal.el ends here
