@@ -26,6 +26,7 @@
 (require 'graphviz-dot-mode)
 ;; (require 'graphviz-dot-mode)
 
+(setq graphviz-dot-indent-width 2)
 ;; don't activate autopair in graphviz-dot-mode
 (set-default 'autopair-dont-activate #'(lambda () (eq major-mode 'graphviz-dot-mode)))
 
