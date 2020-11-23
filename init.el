@@ -49,7 +49,10 @@
 ;; these packages are installed by the package config file
 (setq sk:package-list '(
 			all-the-icons
+			auto-complete
 ;			auctex ;
+			company ; company auto completion for lsp-mode
+			company-lsp ;
 			counsel ;
 			counsel-etags ; etags for counsel
 			counsel-projectile ;
@@ -59,9 +62,14 @@
 			ggtags ;
 			gnuplot ; gnuplot
 			gnuplot-mode ; support for gnu-plot
+			go-mode; support for golang
+			go-autocomplete
+			go-rename
 			google-translate ; google-translate
 			hydra ; hydras
 			;; jedi  ; jedi-mode for python development
+			lsp-mode
+			lsp-ui
 			plantuml-mode ; uml diagrams - this may require manual installation with M-x package-install
 			magit ; git integration
 			sass-mode ; sass for css
@@ -72,7 +80,9 @@
 			yaml-mode ; yaml-mode
 			highlight-parentheses ; highlight-parentheses-mode
 			ivy ; ido-mode replacement
+			ob-restclient ; testing rest in org files
 			ob-blockdiag ;block diag for babel
+			ob-go ; golang for babel
 			ob-browser ; screenshots in org-mode
 			ob-http ; http request in org-mode
 			ob-translate ; google translate in org-mode
@@ -80,6 +90,7 @@
 			projectile ; projects in emacs
 			rainbow-delimiters ; rainbow ([{
 			;; rjsx-mode ; react / react-native
+			restclient ; rest interface
 			scss-mode ; scss / sass css files
 			salt-mode ; SaltStack
 			;; spaceline ; mode line customizations
@@ -155,9 +166,11 @@
 		       ;; superseded in emacs22		       "linum"       ;line number mode
 		       ))
 ;; (load "~/.emacs.d/configs/frame-cmds-config.el")
-(add-to-list 'load-path "~/.emacs.d/configs/")
+(add-to-list 'load-path "~/.emacs.d/pconfig/")
 (require 'dockerfile-mode-config)
 (require 'frame-cmds-config)
+(require 'washlaundry-config)
+(require 'golang-config)
 ;;(add-to-list 'load-path '~/.emacs.d/configs/dockerfile-mode-config.el)
 
 
