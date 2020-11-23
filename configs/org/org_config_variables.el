@@ -17,6 +17,7 @@
 (eval-when-compile (defvar org-default-priority)) ; defined by org-mode
 (eval-when-compile (defvar org-directory)) ; defined by org-mode
 (eval-when-compile (defvar org-ditaa-jar-path)) ; defined by org-mode
+(eval-when-compile (defvar org-file-apps)) ; defined by org-mode
 (eval-when-compile (defvar org-highest-priority)) ; defined by org-mode
 (eval-when-compile (defvar org-log-into-drawer)) ; defined by org-mode
 (eval-when-compile (defvar org-lowest-priority)) ; defined by org-mode
@@ -66,5 +67,10 @@
 (setq org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar")
 (setq org-confirm-babel-evaluate t) ; confirm before executing src blocks
 
+;; open in
+(setq org-file-apps '((auto-mode . emacs)
+		     ("\\.mm\\'" . default)
+		     ("\\.x?html?\\'" . "firefox %s")
+		     ("\\.pdf\\'" . default)))
 (provide 'org_config_variables)
 ;;; org_config_variables.el ends here

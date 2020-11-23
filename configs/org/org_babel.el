@@ -15,6 +15,7 @@
 (eval-when-compile (defvar org-babel-do-load-languages)) ; defined by source
 (eval-when-compile (defvar org-confirm-babel-evaluate)) ; defined by source
 (eval-when-compile (defvar org-src-fontify-natively)) ; defined by source
+(require 'ob-go)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((awk . t)
@@ -24,6 +25,7 @@
    (css . t)
    (ditaa . t) ; ascii boxes to flow charts
    (dot . t) ; requires graphviz
+   (go . t) ; golang (requires go and ob-go)
    (gnuplot . t) ; requires gnuplot
    (http . t)
    (java . t) ;

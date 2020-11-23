@@ -13,7 +13,7 @@
     )
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
+(add-hook 'org-mode-hook 'variable-pitch-mode)
 ;; turn on syntax highlighting for code blocks
 (setq org-src-fontify-natively t)
 
@@ -24,19 +24,31 @@
                              ((x-list-fonts "Verdana")         '(:font "Verdana"))
                              ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
                              (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-;;       (base-font-color     (face-foreground 'default nil 'default))
-         (headline           `(:inherit default :weight bold )))
+       (variable-fixed (cond ((x-list-fonts "Source Code Variable") '(:font "Source Code Variable"))
+			     ((x-list-fonts "Source Code Pro") '(:font "Source Code Pro"))
+			     (nil (warn "Cannot find a good mono font, install Source Code Variable or Pro"))))
+       ;; This removes heading coloring
+       ;;       (base-font-color     (face-foreground 'default nil 'default))
+       (headline `(:inherit default :weight semi-bold ))
+       (midline `(:inherit default :weight normal))
+       (notheadline `(:inherit default)))
 
-      (custom-theme-set-faces 'user
-                          `(org-level-8 ((t (,@headline ,@variable-tuple))))
-                          `(org-level-7 ((t (,@headline ,@variable-tuple))))
-                          `(org-level-6 ((t (,@headline ,@variable-tuple))))
-                          `(org-level-5 ((t (,@headline ,@variable-tuple))))
-                          `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
-                          `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
-                          `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
-                          `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
-                          `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil))))))
+  (custom-theme-set-faces 'user
+                          `(org-level-8 ((t (,@midline ,@variable-tuple))))
+                          `(org-level-7 ((t (,@midline ,@variable-tuple))))
+                          `(org-level-6 ((t (,@midline ,@variable-tuple))))
+                          `(org-level-5 ((t (,@midline ,@variable-tuple))))
+                          `(org-level-4 ((t (,@midline ,@variable-tuple :height 1.0))))
+                          `(org-level-3 ((t (,@midline ,@variable-tuple :height 1.0))))
+                          `(org-level-2 ((t (,@midline ,@variable-tuple :height 1.0 :width normal))))
+                          `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.0))))
+                          `(org-document-title ((t (,@headline ,@variable-tuple :height 1.1 :underline nil))))
+			  `(org-block ((t (,@notheadline ,@variable-fixed))))
+			  `(org-table ((t (,@notheadline ,@variable-fixed))))
+			  `(org-indent ((t (,@notheadline ,@variable-fixed))))
+			  `(org-tag ((t (,@notheadline ,@variable-fixed))))
+			  `(org-verbatim ((t (,@notheadline ,@variable-fixed))))
+			  `(org-code ((t (,@notheadline ,@variable-fixed))))))
 
 
 
